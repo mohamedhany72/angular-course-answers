@@ -1,10 +1,10 @@
 (function () {
     'use strict';
     
-    angular.module('myApp', [])
-    .controller('myController', myController);
+    angular.module('app', [])
+    .controller('ctrl', ctrl);
     myController.$inject = ["$scope"];
-    function myController(){
+    function ctrl(){
 
     };
     
