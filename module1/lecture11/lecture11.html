@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="imageApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture11</title>
+</head>
+<body ng-controller="imageController">
+    <h1>We will handle a simple html error</h1>
+
+    <div>
+        <p>Here if use html attribute "src" we will see errors in console while actually there's none <br>
+        insted use angular attribute "ng-src" to reomve the error</p>
+        <button ng-click="changeAnimal()">change animal</button> <br>
+        <img ng-src="images/{{animal}}.jpg" alt="{{animal}}">
+
+        
+    </div>
+
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
