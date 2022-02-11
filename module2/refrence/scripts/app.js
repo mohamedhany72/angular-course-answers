@@ -3,8 +3,8 @@
     
     angular.module('app', [])
     .controller('ctrl', ctrl);
-    myController.$inject = ["$scope"];
-    function ctrl(){
+    ctrl.$inject = ["$scope"];
+    function ctrl($scope){
 
     };
     
