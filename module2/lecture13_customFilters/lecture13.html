@@ -24,6 +24,14 @@
         <h3>use of custom filters inside html</h3>
         <p>{{"walk is fun" | run}}</p>
     </div>
+
+    <div>
+        <h3>Use of custom filters with arguments inside html with chaining them</h3>
+        <p>Original Lie: {{letter}}</p>
+        <p>truth: {{letter | cr : "Geophysics" : "coding"}}</p>
+        <p>BIG TRUTH: {{letter | cr : "Geophysics" : "coding" | uppercase}}</p>
+        <p style="color: red;">note that I didn't inject cr filter in my controller bec. I used it directly inside html</p>
+    </div>
     <script src="./scripts/angular.min.js"></script>
     <script src="./scripts/app.js"></script>
 </body>
