@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="filtersApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filters</title>
+</head>
+<body ng-controller="filtersController">
+    <h1>Filters</h1>
+    <p>
+        object: {{object}}
+    </p>
+    <p>
+        price: {{price | currency}} <br>
+        price in Euro {{price | currency : '€' : 4}}
+    </p>
+
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
