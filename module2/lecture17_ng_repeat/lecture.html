@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="repeatApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-controller="ctrl">
+    <h1>ng-repeat</h1>
+
+    <div>
+        <h2>repeat from a normal list</h2>
+        <h3>fruits List</h3>
+        <ul>
+            <li ng-repeat="item in shoplist1">{{item}}</li>
+        </ul>
+    </div>
+    <br><br>
+    <div>
+        <h2>edit the supermarket list</h2>
+        <h3>change price of the egg</h3>
+        <input type="text" ng-model="shoplist2[0].price">
+        <br>
+        <h3>add item</h3>
+        <input type="text" ng-model="addedName" placeholder="item">
+        <input type="text" ng-model="addedPrice" placeholder="price">
+        <button ng-click="addme()">add the new item</button>
+    </div>
+    <br>
+    <div>
+        <h2>repeat from objects list with adding index</h2>
+        <h3>some supermarket items</h3>
+        <ul>
+            <li ng-repeat="item in shoplist2">{{$index+1}}. {{item.name}} price is: {{item.price | currency : "EGP" : 2}}</li>
+        </ul>
+    </div>
+
+
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
