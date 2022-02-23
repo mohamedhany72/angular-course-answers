@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Services</title>
+    <style>
+        body{
+            padding: 30px;
+            /* text-align: center; */
+            font-size: 1.2rem;
+        }
+        .asSyntax{
+            background: #81ecec;
+            padding: 20px;
+        }
+        .normal{
+            background: #ffeaa7;
+            padding: 20px;
+        }
+        .separtor{
+            width: 100%;
+            height: 50px;
+        }
+        p{
+            padding: 30px;
+            border: 2px solid #000;
+            font-size: 1.3rem;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Custom services</h1>
+    <p>
+        custom services are used to share data between controllers, the data inside services are "singlton"
+        which means they are only institiated one time, and if the services is never invoked it won't be institiated.
+    </p>
+    <p>
+        here we have four controllers the first two are "function constructors" with controller as syntax and are linked
+        with the same service, the second two are normal controllers with $scope injected and are connected with a differnt 
+        service. <br>
+        theres a fifth controller called "shopListShowCtrl3" which shows that the same service can be used between different
+        types of controllers.
+    </p>
+    <div class="asSyntax" ng-controller="ShopListAddCtrl1 as itemAdd">
+        <input type="text" ng-model="itemAdd.itemName" placeholder="item name">
+        <input type="text" ng-model="itemAdd.itemQuantity" placeholder="item quantity">
+        <button ng-click="itemAdd.addItem()">Add Item</button>
+
+    </div>
+    <div class="asSyntax" ng-controller="ShopListShowCtrl1 as itemShow">
+        <ol>
+            <li ng-repeat="item in itemShow.items">
+                {{item.quantity}} of {{item.name}} 
+                <button ng-click="itemShow.removeItem($index)">remove</button>
+            </li>
+        </ol>
+    </div>
+
+    <div class="normal" ng-controller="shopListShowCtrl3">
+        <ol>
+            <li ng-repeat="item in items">
+                {{item.quantity}} of {{item.name}} 
+                <button ng-click="removeItem($index)">remove</button>
+            </li>
+        </ol>
+    </div>
+
+    <div class="separtor"></div>
+
+    <div class="normal" ng-controller="shopListAddCtrl2">
+        <input type="text" ng-model="itemName" placeholder="item name">
+        <input type="text" ng-model="itemQuantity" placeholder="item quantity">
+        <button ng-click="addItem()">Add Item</button>
+    </div>
+
+    <div class="normal" ng-controller="shopListShowCtrl2">
+        <ol>
+            <li ng-repeat="item in items">
+                {{item.quantity}} of {{item.name}} 
+                <button ng-click="removeItem($index)">remove</button>
+            </li>
+        </ol>
+    </div>
+
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
