@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>Document</title>
+
+    <style>
+        body{
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="asSyntax" ng-controller="ShoppingListCtrl as ctrl">
+        <h1>Shopping list with Promises</h1>
+        <div>
+            <input type="text" ng-model="ctrl.itemName" placeholder="item name">
+            <input type="text" ng-model="ctrl.itemQuantity" placeholder="item quantity"> boxes
+            <button ng-click="ctrl.addItem()">Add Item</button>
+        </div>
+
+        <ol>
+            <li ng-repeat="item in ctrl.items">
+                {{item.quantity}} boxes of {{item.name}} 
+                <button ng-click="ctrl.removeItem($index)">remove</button>
+            </li>
+        </ol>
+    </div>
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
