@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>Document</title>
+</head>
+<bod>
+    <h1>Ajax with $http Service</h1>
+
+    <div ng-controller="MenuCategoriesController as menu">
+        <h3>List of menu categories</h3>
+        <ul>
+            <li ng-repeat="category in menu.categories">
+                ( <a href="" ng-click="menu.logMenuItems(category.short_name);">{{category.short_name}}</a> )
+                {{category.name}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="./scripts/angular.min.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
