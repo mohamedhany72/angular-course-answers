@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" ng-app="NarrowItDownApp">
 
 <head>
@@ -14,15 +13,15 @@
 </head>
 
 <body>
-    <div class="container" ng-controller="NarrowItDownController as menu">
+    <div class="container" ng-controller="NarrowItDownController as ctrl">
         <h1>Narrow Down Your Chinese Menu Choice</h1>
         <div class="search">
-            <input type="text" placeholder="search term" class="form-control" ng-model="menu.shortName">
+            <input type="text" placeholder="search term" class="form-control" ng-model="ctrl.shortName">
             <div class="narrow-button">
-                <button class="btn btn-primary" ng-click="menu.matchedMenuItems(menu.shortName)">Narrow It Down For Me!</button>
+                <button class="btn btn-primary" ng-click="ctrl.matchedMenuItems(ctrl.shortName)">Narrow It Down For Me!</button>
             </div>
         </div>
-        <found-items found-items="menu.found" on-remove="menu.removeMenuItem(index)" on-empty="menu.message"></found-items>
+        <found-items found-items="ctrl.found" on-remove="ctrl.removeMenuItem(index)" on-empty="ctrl.message"></found-items>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
     <script src="scripts/app.js"></script>
